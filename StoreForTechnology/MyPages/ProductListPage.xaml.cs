@@ -25,11 +25,11 @@ namespace StoreForTechnology.MyPages
         {
             InitializeComponent();
 
-        //    var products = App.db.Product.ToList();
-        //    foreach (var product in products)
-        //    {
-        //        ProductWp.Children.Add(new ProductUserControl(new Image(), product.Title, product.Cost, product.CostTime.ToString(), product.CostVisibility));
-        //    }
+            var products = App.db.Product.ToList();
+            foreach (var product in products)
+            {
+                ProductWp.Children.Add(new ProductUserControl(new Image(), product.Title, product.Cost, product.CostTime, product.Testimonials));
+            }
         }
     }
 }

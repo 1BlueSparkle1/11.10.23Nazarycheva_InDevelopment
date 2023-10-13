@@ -5,36 +5,39 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StoreForTechnology.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="250">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="61*"/>
-            <RowDefinition Height="43*"/>
-            <RowDefinition Height="62*"/>
-            <RowDefinition Height="64*"/>
-        </Grid.RowDefinitions>
-        <Image Grid.Row="0" Source="/Resources/logo.png" Name="TitleImg"></Image>
-        <TextBlock x:Name="TitleTB" Grid.Row="1"></TextBlock>
-        <StackPanel Grid.Row="2">
-            <TextBlock x:Name="NumOtzTB"></TextBlock>
-            <TextBlock x:Name="OtzTB"></TextBlock>
-        </StackPanel>
-        <StackPanel Grid.Row="3">
-            <TextBlock Name="NewPriceTB"></TextBlock>
-            <TextBlock Name="PriceTB"></TextBlock>
-        </StackPanel>
-        <StackPanel Grid.Row="4" Orientation="Horizontal">
-            <Button Foreground="#FFE31235" BorderBrush="#FFE31235" Background="#FFE31235" x:Name="BuyBtn">
-                <Image Source="/Resources/kor.png"></Image>
-            </Button>
-            <Button Background="White" BorderBrush="White" Margin="5,0,0,0" Padding="0" x:Name="LikeBtn">
-                <Image Source="/Resources/heart.png"></Image>
-            </Button>
-            <Button Background="White" BorderBrush="White" Margin="0" Padding="0" x:Name="TopBtn">
-                <Image Source="/Resources/line.png"></Image>
-            </Button>
-        </StackPanel>
+             d:DesignHeight="350" d:DesignWidth="230">
+    <Border BorderBrush="#FF4E0000" BorderThickness="3" Margin="5" Width="230">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120*"/>
+                <RowDefinition Height="61*"/>
+                <RowDefinition Height="43*"/>
+                <RowDefinition Height="62*"/>
+                <RowDefinition Height="64*"/>
+            </Grid.RowDefinitions>
+            <Image Height="100" Grid.Row="0" Source="/Resources/logo.png" Name="TitleImg"></Image>
+            <TextBlock x:Name="TitleTB" Grid.Row="1"></TextBlock>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <TextBlock x:Name="NumOtzTB"></TextBlock>
+                <TextBlock x:Name="OtzTB"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <TextBlock Name="NewPriceTB"></TextBlock>
+                <TextBlock Name="PriceTB"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                <Button Foreground="#FFE31235" BorderBrush="#FFE31235" Background="#FFE31235" x:Name="BuyBtn">
+                    <Image Source="/Resources/kor.png"></Image>
+                </Button>
+                <Button Background="White" BorderBrush="White" Margin="5,0,0,0" Padding="0" x:Name="LikeBtn">
+                    <Image Source="/Resources/heart.png"></Image>
+                </Button>
+                <Button Background="White" BorderBrush="White" Margin="0" Padding="0" x:Name="TopBtn">
+                    <Image Source="/Resources/line.png"></Image>
+                </Button>
+            </StackPanel>
 
-    </Grid>
+        </Grid>
+    </Border>
+    
 </UserControl>

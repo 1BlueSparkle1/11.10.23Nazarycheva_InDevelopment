@@ -9,8 +9,8 @@
       Title="ProductListPage">
 
     <Grid>
-        <ScrollViewer  HorizontalAlignment="Center">
-            <WrapPanel Name="ProductWp">
+        <ScrollViewer>
+            <WrapPanel Name="ProductWp" >
 
             </WrapPanel>
         </ScrollViewer>
