@@ -16,14 +16,15 @@
                 <RowDefinition Height="64*"/>
             </Grid.RowDefinitions>
             <Image Height="100" Grid.Row="0" Source="/Resources/logo.png" Name="TitleImg"></Image>
-            <TextBlock x:Name="TitleTB" Grid.Row="1"></TextBlock>
+            <TextBlock x:Name="TitleTB" Grid.Row="1" HorizontalAlignment="Stretch"></TextBlock>
             <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <TextBlock x:Name="NumOtzTB"></TextBlock>
-                <TextBlock x:Name="OtzTB"></TextBlock>
+                <Image Source="/Resources/star.png" Height="20"></Image>
+                <TextBlock x:Name="NumOtzTB" Foreground="Red"></TextBlock>
+                <TextBlock x:Name="OtzTB" Foreground="#FF888888"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="3" Orientation="Horizontal">
                 <TextBlock Name="NewPriceTB"></TextBlock>
-                <TextBlock Name="PriceTB"></TextBlock>
+                <TextBlock Name="PriceTB" Foreground="#FF888888" TextDecorations="Strikethrough"></TextBlock>
             </StackPanel>
             <StackPanel Grid.Row="4" Orientation="Horizontal">
                 <Button Foreground="#FFE31235" BorderBrush="#FFE31235" Background="#FFE31235" x:Name="BuyBtn">

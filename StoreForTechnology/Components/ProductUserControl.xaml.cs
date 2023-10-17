@@ -20,13 +20,15 @@ namespace StoreForTechnology.Components
     /// </summary>
     public partial class ProductUserControl : UserControl
     {
-        public ProductUserControl( Image image, string title, decimal cost, string costTime, string testimonials)
+        public ProductUserControl( Image image, string title, decimal cost, string costTime, string testimonials, string reviews, Visibility costVisibility)
         {
             InitializeComponent();
             TitleTB.Text = title;
-            PriceTB.Text = cost.ToString();
+            PriceTB.Text = cost.ToString("0");
             NewPriceTB.Text = costTime;
             OtzTB.Text = testimonials;
+            NumOtzTB.Text = reviews;
+            PriceTB.Visibility = costVisibility;
         }
 
     }
