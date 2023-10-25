@@ -5,15 +5,48 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:StoreForTechnology.MyPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="900"
       Title="ProductListPage">
 
     <Grid>
-        <ScrollViewer>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="181*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1">
             <WrapPanel Name="ProductWp" >
 
             </WrapPanel>
         </ScrollViewer>
+        <StackPanel Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>По цене</TextBlock>
+                <ComboBox x:Name="CostCb" SelectionChanged="CostCb_SelectionChanged">
+                    <ComboBoxItem>По умолчанию</ComboBoxItem>
+                    <ComboBoxItem>По возрастанию</ComboBoxItem>
+                    <ComboBoxItem>По убыванию</ComboBoxItem>
+                </ComboBox>
+                <TextBlock>По рейтингу</TextBlock>
+                <ComboBox x:Name="RatingCb" SelectionChanged="RatingCb_SelectionChanged">
+                    <ComboBoxItem>По умолчанию</ComboBoxItem>
+                    <ComboBoxItem>По возрастанию</ComboBoxItem>
+                    <ComboBoxItem>По убыванию</ComboBoxItem>
+                </ComboBox>
+                <TextBlock>По отзывам</TextBlock>
+                <ComboBox x:Name="TestimonialsCb" SelectionChanged="TestimonialsCb_SelectionChanged">
+                    <ComboBoxItem>По умолчанию</ComboBoxItem>
+                    <ComboBoxItem>меньше 5</ComboBoxItem>
+                    <ComboBoxItem>от 5 до 20</ComboBoxItem>
+                    <ComboBoxItem>от 20 до 100</ComboBoxItem>
+                    <ComboBoxItem>больше 100</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock>По названию и описанию</TextBlock>
+                <TextBox x:Name="TitleTb" Width="500px" TextChanged="TitleTb_TextChanged"></TextBox>
+            </StackPanel>
+        </StackPanel>
+
 
     </Grid>
 </Page>

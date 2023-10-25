@@ -25,11 +25,84 @@ namespace StoreForTechnology.MyPages
         {
             InitializeComponent();
 
+            Refresh();
+
             var products = App.db.Product.ToList();
             foreach (var product in products)
             {
-                ProductWp.Children.Add(new ProductUserControl(new Image(), product.Title, product.Cost, product.CostTime, product.Testimonials, product.Reviews, product.CostVisibility));
+                ProductWp.Children.Add(new ProductUserControl(product));
             }
+        }
+        private void Refresh()
+        {
+            IEnumerable<Product> products = App.db.Product;
+            if (CostCb.SelectedIndex != 0)
+            {
+                if (CostCb.SelectedIndex == 1)
+                {
+                    products = products.OrderBy(x => x.TotalCost);
+                }
+                else
+                {
+                    products = products.OrderByDescending(x => x.TotalCost);
+                }
+            }
+            if (RatingCb.SelectedIndex != 0)
+            {
+                if (RatingCb.SelectedIndex == 1)
+                {
+                    products = products.OrderBy(x => x.Reviews);
+                }
+                else
+                {
+                    products = products.OrderByDescending(x => x.Reviews);
+                }
+            }
+            if (TestimonialsCb.SelectedIndex != 0)
+            {
+                if (TestimonialsCb.SelectedIndex == 1)
+                {
+                    products = products.Where(x => x.Testimonials <= 5);
+                }
+                else if (TestimonialsCb.SelectedIndex == 2)
+                {
+                    products = products.Where(x => x.Testimonials >=5  && x.Testimonials <= 20);
+                }
+                else if (TestimonialsCb.SelectedIndex == 3)
+                {
+                    products = products.Where(x => x.Testimonials >= 20 && x.Testimonials <= 100);
+                }
+                else if (TestimonialsCb.SelectedIndex == 4)
+                {
+                    products = products.Where(x => x.Testimonials >= 100);
+                }
+            }
+            products = products.Where(x => x.Title.ToLower().Contains(TitleTb.Text.ToLower()) || x.Description.ToLower().Contains(TitleTb.Text.ToLower()));
+            ProductWp.Children.Clear();
+            foreach (var product in products)
+            {
+                ProductWp.Children.Add(new ProductUserControl(product));
+            }
+        }
+
+        private void CostCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void RatingCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void TestimonialsCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void TitleTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Refresh();
         }
     }
 }

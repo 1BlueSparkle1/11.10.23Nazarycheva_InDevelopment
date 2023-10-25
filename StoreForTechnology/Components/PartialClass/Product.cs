@@ -19,7 +19,7 @@ namespace StoreForTechnology.Components
                     return $"{Cost - (Cost * (decimal)Discount / 100) : 0} Р ";
             }
         }
-        public string Testimonials
+        public int Testimonials
         {
             get
             {
@@ -28,7 +28,7 @@ namespace StoreForTechnology.Components
                 {
                     count++;
                 }
-                return $" {count} отзывов";
+                return count;
             }
         }
         public string Reviews
@@ -65,6 +65,18 @@ namespace StoreForTechnology.Components
                 }
                 else
                     return Visibility.Visible;
+            }
+        }
+        public decimal TotalCost
+        {
+            get
+            {
+                if (Discount != 0)
+                {
+                    return Cost - (Cost * (decimal)Discount / 100);
+                }
+                else
+                    return Cost;
             }
         }
 
