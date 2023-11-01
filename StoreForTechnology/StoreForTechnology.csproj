@@ -79,6 +79,7 @@
     <Compile Include="Components\Feedback.cs">
       <DependentUpon>StoreBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\navigation.cs" />
     <Compile Include="Components\PartialClass\Product.cs" />
     <Compile Include="Components\Product.cs">
       <DependentUpon>StoreBD.tt</DependentUpon>

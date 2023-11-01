@@ -24,6 +24,10 @@ namespace StoreForTechnology.MyPages
         public ProductListPage()
         {
             InitializeComponent();
+            if (App.isAdmin == false)
+            {
+                AddBt.Visibility = Visibility.Hidden;
+            }
 
             Refresh();
 
@@ -83,6 +87,8 @@ namespace StoreForTechnology.MyPages
             {
                 ProductWp.Children.Add(new ProductUserControl(product));
             }
+            
+            CountDataTb.Text = products.Count().ToString() + " из 29";
         }
 
         private void CostCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -103,6 +109,11 @@ namespace StoreForTechnology.MyPages
         private void TitleTb_TextChanged(object sender, TextChangedEventArgs e)
         {
             Refresh();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //navigation.NextPage(new PageComponent(new ))
         }
     }
 }

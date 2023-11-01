@@ -24,17 +24,17 @@
             </Rectangle.Fill>
         </Rectangle>
         <Image Grid.Row="0" Grid.Column="0" Source="/Resources/logo.png"></Image>
-        <TextBlock Grid.Column="1" Grid.Row="0" Foreground="White">Магазин Техники</TextBlock>
+        <TextBlock x:Name="TitleTb" Grid.Column="1" Grid.Row="0" Foreground="White">Магазин Техники</TextBlock>
 
         <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom">
-            <Button Margin="5" Background="#FF870000" Foreground="White">
+            <Button x:Name="OnAdmBt" Margin="5" Background="#FF870000" Foreground="White" Click="OnAdmBt_Click">
                 <TextBlock >Админ <LineBreak></LineBreak>вход</TextBlock>
             </Button>
-            <Button Margin="5" Background="#FF870000" Foreground="White">
+            <Button x:Name="OffAdmBt" Margin="5" Background="#FF870000" Foreground="White" Click="OffAdmBt_Click">
                 <TextBlock >Админ <LineBreak></LineBreak>выход</TextBlock>
             </Button>
-            <TextBox Width="110"></TextBox>
-            <Button Margin="5" Background="#FF870000" Foreground="White">Назад</Button>
+            <PasswordBox x:Name="PasswordPb" Width="110"></PasswordBox>
+            <Button x:Name="BackBt" Margin="5" Background="#FF870000" Foreground="White" Click="BackBt_Click">Назад</Button>
         </StackPanel>
         
         <Frame x:Name="MainFrame" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"></Frame>

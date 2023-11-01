@@ -27,6 +27,8 @@ namespace StoreForTechnology
         public MainWindow()
         {
             InitializeComponent();
+            navigation.mainWindow = this;
+            navigation.NextPage(new PageComponent("Магазин Техники", new ProductListPage()));
 
             var path = @"C:\Users\Acer\Desktop\РПМ\Задание магазин техники\";
             foreach (var item in App.db.Product.ToArray())
@@ -38,6 +40,29 @@ namespace StoreForTechnology
             App.db.SaveChanges();
 
             MainFrame.Navigate(new ProductListPage());
+        }
+
+        private void OnAdmBt_Click(object sender, RoutedEventArgs e)
+        {
+            if (PasswordPb.Password == "0000")
+            {
+                App.isAdmin = true;
+                navigation.ClearHistory();
+                navigation.NextPage(new PageComponent("Режим админа", new ProductListPage()));
+                PasswordPb.Clear();
+            }
+        }
+
+        private void OffAdmBt_Click(object sender, RoutedEventArgs e)
+        {
+            App.isAdmin = false;
+            navigation.ClearHistory();
+            navigation.NextPage(new PageComponent("Список услуг", new ProductListPage()));
+        }
+
+        private void BackBt_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.BackPage();
         }
     }
 }

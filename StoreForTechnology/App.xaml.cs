@@ -15,5 +15,6 @@ namespace StoreForTechnology
     public partial class App : Application
     {
         public static HardwareShopEntities db = new HardwareShopEntities();
+        public static bool isAdmin = false;
     }
 }
