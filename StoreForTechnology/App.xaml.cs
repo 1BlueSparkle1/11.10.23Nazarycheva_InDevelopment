@@ -1,4 +1,5 @@
 ﻿using StoreForTechnology.Components;
+using StoreForTechnology.MyPages;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,5 +17,7 @@ namespace StoreForTechnology
     {
         public static HardwareShopEntities db = new HardwareShopEntities();
         public static bool isAdmin = false;
+        public static MainWindow mainWindow;
+        public static AddEditProductPage productPage;
     }
 }

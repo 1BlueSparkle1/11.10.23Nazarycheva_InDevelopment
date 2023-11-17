@@ -27,6 +27,12 @@ namespace StoreForTechnology
         public MainWindow()
         {
             InitializeComponent();
+
+            if (App.isAdmin == false)
+            {
+                OffAdmBt.Visibility = Visibility.Collapsed;
+            }
+
             navigation.mainWindow = this;
             navigation.NextPage(new PageComponent("Магазин Техники", new ProductListPage()));
 
@@ -50,6 +56,8 @@ namespace StoreForTechnology
                 navigation.ClearHistory();
                 navigation.NextPage(new PageComponent("Режим админа", new ProductListPage()));
                 PasswordPb.Clear();
+                OnAdmBt.Visibility = Visibility.Collapsed;
+                OffAdmBt.Visibility = Visibility.Visible;
             }
         }
 
@@ -58,6 +66,8 @@ namespace StoreForTechnology
             App.isAdmin = false;
             navigation.ClearHistory();
             navigation.NextPage(new PageComponent("Список услуг", new ProductListPage()));
+            OnAdmBt.Visibility = Visibility.Visible;
+            OffAdmBt.Visibility = Visibility.Collapsed;
         }
 
         private void BackBt_Click(object sender, RoutedEventArgs e)

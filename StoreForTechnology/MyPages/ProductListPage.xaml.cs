@@ -88,7 +88,7 @@ namespace StoreForTechnology.MyPages
                 ProductWp.Children.Add(new ProductUserControl(product));
             }
             
-            CountDataTb.Text = products.Count().ToString() + " из 29";
+            CountDataTb.Text = products.Count().ToString() + " из " + App.db.Product.Count();
         }
 
         private void CostCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -113,7 +113,7 @@ namespace StoreForTechnology.MyPages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //navigation.NextPage(new PageComponent(new ))
+            navigation.NextPage(new PageComponent("Добавление услуги", new AddEditProductPage(new Product())));
         }
     }
 }

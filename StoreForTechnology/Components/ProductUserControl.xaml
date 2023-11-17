@@ -5,40 +5,48 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StoreForTechnology.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="230">
-    <Border BorderBrush="#FF4E0000" BorderThickness="3" Margin="5" Width="230">
-        <Grid Background="White">
+             d:DesignHeight="350" d:DesignWidth="260">
+    <Border BorderBrush="#FF4E0000" BorderThickness="3" Margin="5" Width="250" Name="MainBorder">
+        <Grid Background="White" Name="MainGrid">
             <Grid.RowDefinitions>
-                <RowDefinition Height="120*"/>
-                <RowDefinition Height="61*"/>
-                <RowDefinition Height="43*"/>
-                <RowDefinition Height="62*"/>
-                <RowDefinition Height="64*"/>
+                <RowDefinition Height="119*"/>
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="67*"/>
             </Grid.RowDefinitions>
-            <Image Height="100" Grid.Row="0" Source="/Resources/logo.png" Name="TitleImg"></Image>
-            <TextBlock x:Name="TitleTB" Grid.Row="1" HorizontalAlignment="Stretch"></TextBlock>
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Image Grid.Row="0" Source="/Resources/logo.png" Name="TitleImg" Margin="0,8,0,7" Height="100"/>
+            <TextBlock x:Name="TitleTB" Grid.Row="1" HorizontalAlignment="Stretch" Height="26"></TextBlock>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" >
                 <Image Source="/Resources/star.png" Height="20"></Image>
                 <TextBlock x:Name="NumOtzTB" Foreground="Red"></TextBlock>
                 <TextBlock x:Name="OtzTB" Foreground="#FF888888"></TextBlock>
             </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,0,0,3">
                 <TextBlock Name="NewPriceTB"></TextBlock>
                 <TextBlock Name="PriceTB" Foreground="#FF888888" TextDecorations="Strikethrough"></TextBlock>
             </StackPanel>
-            <StackPanel Grid.Row="4" Orientation="Horizontal">
-                <Button Foreground="#FFE31235" BorderBrush="#FFE31235" Background="#FFE31235" x:Name="BuyBtn">
-                    <Image Source="/Resources/kor.png"></Image>
-                </Button>
-                <Button Background="White" BorderBrush="White" Margin="5,0,0,0" Padding="0" x:Name="LikeBtn">
-                    <Image Source="/Resources/heart.png"></Image>
-                </Button>
-                <Button Background="White" BorderBrush="White" Margin="0" Padding="0" x:Name="TopBtn">
-                    <Image Source="/Resources/line.png"></Image>
-                </Button>
+            <StackPanel Grid.Row="4">
+                <StackPanel Orientation="Horizontal">
+                    <Button Foreground="#FFE31235" BorderBrush="#FFE31235" Background="#FFE31235" x:Name="BuyBtn">
+                        <Image Source="/Resources/kor.png"></Image>
+                    </Button>
+                    <Button Background="White" BorderBrush="White" Margin="5,0,0,0" Padding="0" x:Name="LikeBtn">
+                        <Image Source="/Resources/heart.png"></Image>
+                    </Button>
+                    <Button Background="White" BorderBrush="White" Margin="0" Padding="0" x:Name="TopBtn">
+                        <Image Source="/Resources/line.png"></Image>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="CreateBtn" Background="#FF870000" Foreground="White" Padding="6 3" Click="CreateBtn_Click">Редактировать</Button>
+                    <Button Name="DeleteBtn" Background="#FF870000" Foreground="White" Padding="6 3" Click="DeleteBtn_Click">Удалить</Button>
+                </StackPanel>
+                
             </StackPanel>
+
 
         </Grid>
     </Border>
-    
+
 </UserControl>

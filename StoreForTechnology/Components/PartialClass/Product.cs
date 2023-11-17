@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
+
 namespace StoreForTechnology.Components
 {
     public partial class Product
@@ -77,6 +79,18 @@ namespace StoreForTechnology.Components
                 }
                 else
                     return Cost;
+            }
+        }
+        public Brush DiscountBrush
+        {
+            get
+            {
+                if (Discount > 0)
+                {
+                    return new SolidColorBrush(Colors.LightGreen);
+                }
+                else 
+                    return new SolidColorBrush(Colors.LightGray);
             }
         }
 

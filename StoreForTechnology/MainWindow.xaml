@@ -33,7 +33,7 @@
             <Button x:Name="OffAdmBt" Margin="5" Background="#FF870000" Foreground="White" Click="OffAdmBt_Click">
                 <TextBlock >Админ <LineBreak></LineBreak>выход</TextBlock>
             </Button>
-            <PasswordBox x:Name="PasswordPb" Width="110"></PasswordBox>
+            <PasswordBox x:Name="PasswordPb" Width="110" Height="35"></PasswordBox>
             <Button x:Name="BackBt" Margin="5" Background="#FF870000" Foreground="White" Click="BackBt_Click">Назад</Button>
         </StackPanel>
         

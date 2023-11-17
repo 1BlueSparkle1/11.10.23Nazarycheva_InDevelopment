@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoreForTechnology.MyPages;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,13 @@ namespace StoreForTechnology.Components
         public ProductUserControl( Product _product)
         {
             InitializeComponent();
+
+            if (App.isAdmin == false)
+            {
+                CreateBtn.Visibility = Visibility.Collapsed;
+                DeleteBtn.Visibility = Visibility.Collapsed;
+            }
+
             product = _product;
             TitleTB.Text = product.Title;
             PriceTB.Text = product.Cost.ToString("0");
@@ -33,6 +41,7 @@ namespace StoreForTechnology.Components
             NumOtzTB.Text = product.Reviews;
             PriceTB.Visibility = product.CostVisibility;
             TitleImg.Source = GetImageSourse(product.MainImage);
+            MainBorder.BorderBrush = product.DiscountBrush;
         }
 
         private BitmapImage GetImageSourse(byte[] byteImage)
@@ -55,6 +64,19 @@ namespace StoreForTechnology.Components
                 MessageBox.Show("Error");
             }
             return bitmapImage;
+        }
+
+        private void CreateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            navigation.NextPage(new PageComponent("Редактирование услуги", new AddEditProductPage(product)));
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+            App.db.Product.Remove(product);
+            App.db.SaveChanges();
+
         }
 
     }
